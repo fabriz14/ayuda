@@ -1,0 +1,37 @@
+/*modal*/
+.modal{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+      /*estos dos van de la mano con fixed*/
+    left: 0;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.41);
+}
+
+.modal-content{
+    width:50%;
+              height: 70%;
+              max-height:'100%';
+              max-width:'100%';
+    padding: 20px;
+    overflow-y: auto;
+    background-color:#cbcaca;
+    border-radius: 10px;
+    box-sizing: border-box;
+
+}
+
+.modal-btn-closed{
+    
+    position: absolute;
+    top:5px;
+    right: 4px;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: none;
+    border: none;
+    outline: none; 
+}
+

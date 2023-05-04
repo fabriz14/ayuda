@@ -1,0 +1,615 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #5f94ff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+/*header{
+  width: 100%;
+  height: 45px;
+  background: #D9D9D9;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 200;
+}
+.icon__menu{
+  width: 50px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transf
+  orm: translateX(10px);
+}*/
+
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+/*------------------------------barra css--------------------------------*/
+/* Google Font Import - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root{
+    /* ===== Colors ===== */
+    --body-color: #c8c8c8; /*color de fondo*/
+    --sidebar-color: #674188;/*color barra*/
+    --primary-color: #ffffff;/*boton flecha*/
+    --primary-color-light: #cfcfcf; /*busqueda y dark*/
+    --toggle-color: #ffffff;/*toogle dark*/
+    --text-color: #ffffff; /*iconos y letras*/
+
+    /* ====== Transition ====== */
+    --tran-03: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.3s ease;
+    --tran-05: all 0.3s ease;
+}
+
+body{
+    min-height: 100vh;
+    background-color: var(--body-color);
+    transition: var(--tran-05);
+}
+
+::selection{
+    background-color: rgb(101, 92, 92);
+    color: #ffffff;
+}
+/*--------letra barra--------------*/
+#botonbarra{
+    color: #ffffff;
+}
+body.dark{
+    --body-color: #18191a;
+    --sidebar-color: #242526;
+    --primary-color: #3a3b3c;
+    --primary-color-light: #3a3b3c;
+    --toggle-color: #fff;
+    --text-color: #ccc;
+}
+
+/* ===== Sidebar ===== */
+ .sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 500px;
+    padding: 35px 10px;
+    background: var(--sidebar-color);
+    transition: var(--tran-05);
+    z-index: 100;  
+}
+
+.sidebar #iconobarra,
+.sidebar #botonbarra{
+    
+}
+.sidebar.close{
+    width: 130px;
+}
+
+/* ===== Reusable code - Here ===== */
+.sidebar li{
+    height: 50px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.sidebar header .image,
+.sidebar #iconobarra{
+    min-width: 60px;
+    border-radius: 6px;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.sidebar .icon{
+    min-width: 80px;
+    border-radius: 6px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+}
+
+.sidebar .text,
+.sidebar #botonbarra,
+.sidebar #iconobarra,
+.sidebar .icon{
+    color: var(--text-color);
+    transition: var(--tran-03);
+}
+
+
+
+.sidebar .text,
+.sidebar #botonbarra{
+    font-size: 17px;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 1;
+}
+.sidebar #pie{
+    opacity: 0;
+    font-size:x-small;
+    
+    }
+
+.sidebar.close #pie{
+opacity: 100;
+}
+.sidebar.close #botonbarra,
+.sidebar.close .text{
+    opacity: 0;
+}
+/* =========================== */
+#iconobarra{
+    font-size: 45px;
+    margin-right: 82px;
+    align-items:flex-start;
+   
+}
+.sidebar header{
+    position: relative;
+
+}
+
+.sidebar header .image-text{
+    display: flex;
+    align-items: center;
+}
+.sidebar header .logo-text{
+    display: flex;
+    flex-direction: column;
+}
+header .image-text .name {
+    margin-top: 2px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+header .image-text .profession{
+    font-size: 16px;
+    margin-top: -2px;
+    display: block;
+}
+
+.sidebar header .image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar header .image img{
+    width: 40px;
+    border-radius: 6px;
+}
+
+.sidebar header .toggle{
+    position: absolute;
+    top: 50%;
+    right: -25px;
+    transform: translateY(-50%) rotate(180deg);
+    height: 25px;
+    width: 25px;
+    background-color: var(--primary-color);
+    color: var(--sidebar-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    cursor: pointer;
+    transition: var(--tran-05);
+}
+
+body.dark .sidebar header .toggle{
+    color: var(--text-color);
+}
+
+.sidebar.close .toggle{
+    transform: translateY(-50%) rotate(0deg);
+}
+
+.sidebar .menu{
+    margin-top: 40px;
+}
+
+.sidebar li.search-box{
+    border-radius: 6px;
+    background-color: var(--primary-color-light);
+    cursor: pointer;
+    transition: var(--tran-05);
+}
+
+.sidebar li.search-box input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    background-color: var(--primary-color-light);
+    color: var(--text-color);
+    border-radius: 6px;
+    font-size: 17px;
+    font-weight: 500;
+    transition: var(--tran-05);
+}
+.sidebar li a{
+    list-style: none;
+    height: 100%;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: var(--tran-03);
+
+    
+}
+/*-----color cuando se pone el puntero*/
+.sidebar li a:hover{
+    background-color: white;
+}
+/*---------------------------------------*/
+/*-------cambio de color de iconos y texto-----*/
+.sidebar li a:hover .icon,
+.sidebar li a:hover #iconobarra,
+.sidebar li a:hover .text{
+    color: var(--sidebar-color);
+}
+.sidebar li a:hover #botonbarra{
+    color: var(--sidebar-color);
+}
+
+body.dark .sidebar li a:hover .icon,
+body.dark .sidebar li a:hover .text{
+    color: bla;
+}
+
+body.dark .sidebar li a:hover #botonbarra{
+    color: var(--text-color);
+}
+
+/*-----------------------------------------------*/
+.sidebar .menu-bar{
+    height: calc(100% - 55px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-y: scroll;
+}
+.menu-bar::-webkit-scrollbar{
+    display: none;
+}
+.sidebar .menu-bar .mode{
+    border-radius: 13px;
+    background-color: var(--primary-color-light);
+    position: relative;
+    transition: var(--tran-05);
+}
+
+.menu-bar .mode .sun-moon{
+    height: 50px;
+    width: 60px;
+}
+
+.mode .sun-moon i{
+    position: absolute;
+}
+.mode .sun-moon i.sun{
+    opacity: 0;
+}
+body.dark .mode .sun-moon i.sun{
+    opacity: 1;
+}
+body.dark .mode .sun-moon i.moon{
+    opacity: 0;
+}
+
+body.dark .home #guardar{
+    background-color: #52ad5a;
+}
+
+.menu-bar .bottom-content .toggle-switch{
+    position: absolute;
+    right: 0;
+    height: 100%;
+    min-width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.toggle-switch .switch{
+    position: relative;
+    height: 22px;
+    width: 40px;
+    border-radius: 25px;
+    background-color: var(--toggle-color);
+    transition: var(--tran-05);
+}
+
+.switch::before{
+    content: '';
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    background-color: var(--sidebar-color);
+    transition: var(--tran-04);
+}
+
+body.dark .switch::before{
+    left: 20px;
+}
+
+.home{
+    position: absolute;
+    top: 0;
+    top: 0;
+    left: 250px;
+    height: 100vh;
+    width: calc(100% - 250px);
+    background-color: var(--body-color);
+    transition: var(--tran-05);
+}
+.home .text{
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--text-color);
+    padding: 12px 30px;
+}
+
+.sidebar.close ~ .home{
+    left: 78px;
+    height: 100vh;
+    width: calc(100% - 78px);
+}
+body.dark .home .text{
+    color:green;
+}
+/*------------------------------barra css--------------------------------*/
+/*----------imagen en formulario----------------------*/
+
+.drop-area{
+    border: 5px dashed #ddd;
+    height: 200px;
+    width: 200px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.drop-area.active{
+    background-color:  #b8d4fe;
+    color: black;
+    border: 2px dashed #618ac9;
+}
+
+.drop-area h4{
+    font-size: 18px;
+    font-weight: 500;
+    color: black;
+}
+
+.drop-area span{
+    font-size: 10px;
+    
+    font-weight: 500;
+    color: black;
+}
+
+.drop-area button{
+    padding: 0% 0%;
+    font-size: 15px; 
+    border: 0;
+    outline: none;
+    background-color: #c077ff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+ .file-container{
+    display: flex;
+    align-items: center;
+    padding: 0px;
+    border: solid 1px #ddd;
+
+ }
+ #preview{
+    margin-top: 10px;
+    
+ }
+ .status-text{
+    padding: 0% 10px;
+ }
+
+ .succes{
+    color:#52ad5a;
+ }
+ .failure{
+    color:#ff0000;
+ }
+#input-file{
+    background-color:#c077ff;
+}
+/*----------imagen en formulario----------------------*/
+
+
+
+/*--------------IMAGEN 2-------- */
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.container img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.card {
+    border: 1px solid #610567;
+    height: 15rem;
+    width: 20rem;
+    position: relative;
+    font-size: 13px;
+}
+
+.card-footer {
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 9px;
+    background: #a246ff;
+}
+
+.dark .card-footer{
+    background-color: #50555b;
+}
+#guardar{
+
+    background-color: #2200ff;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.dark #guardar{
+    background-color: #3a3b3c;
+}
+
+.card-footer input {
+    text-align: center;
+}
+
+
+
+#img-upload-bar{
+    width: 100%;
+}
+
+/*----------select categorias-----------*/
+
+
+#select_categorias{
+
+    width: 100%;
+	background: #faf7f0;
+	border-radius: 3px;
+	height: 45px;
+	line-height: 45px;
+	padding: 0 40px 0 10px;
+	transition: .3s ease all;
+	border: 1px solid transparent;
+    border-bottom-color: #000000;
+    cursor: pointer;
+    
+}
+
+#vencimiento{
+    width: 100%;
+	background: #faf7f0;
+	border-radius: 3px;
+	height: 45px;
+	line-height: 45px;
+	padding: 0 40px 0 10px;
+	transition: .3s ease all;
+	border: 1px solid transparent;
+    border-bottom-color: #000000;
+    cursor: pointer;
+}
+
+#label_cat{
+    height: 45px;
+    padding-top: 10px;
+    
+}
+
+#form_RP{
+    border: #000000;
+}
+
+
+#guardarP,
+#borrarP
+{
+    width: 100%;
+}
+#flexCheckDefault:checked {
+    background-color: rgb(130, 9, 160);
+    }
+
+/*----------select categorias-----------*/

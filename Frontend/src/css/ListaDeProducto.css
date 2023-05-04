@@ -1,0 +1,64 @@
+ul{
+    text-align: start;
+    list-style: none;
+}
+#titulo,#listap {
+    border-bottom: 3px solid  #545454;
+    
+    
+}
+#elemento{
+    margin-bottom: 10px;
+}
+#fondo{
+    background-color: #FFFFFF;
+      
+  }
+#icono{
+    width: 30px;
+    height: 30px;
+}
+
+.button {
+    background-image: url('../images/iconoModificar.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 50px;
+    height: 50px;
+    text-indent: -9999px;
+    border: none;
+    cursor: pointer;
+  }
+  
+#volverHome{
+    background-color: #7868E6;
+    color: white;
+    height: 30px;
+	line-height: 5px;
+    width: 30%;
+    padding: 10px 20px;
+    text-align: center;
+    justify-content: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top:2.5%;
+    margin-left: 35%;
+    cursor: pointer;;
+    transition: .1s ease all;
+}
+
+  #volverHome :hover {
+    box-shadow: 3px 0px 30px rgba(163,163,163, 1);
+}
+table {
+    width: 100%;
+  }
+
+  th {
+    font-size: 35px;
+  }
+  tbody{
+    font-size: 30px;
+  }
+  
